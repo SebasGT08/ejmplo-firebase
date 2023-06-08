@@ -1,0 +1,14 @@
+.cabezera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+  .logo {
+    height: 50px; // ajusta esto para cambiar el tamaño del logo
+  }
+}

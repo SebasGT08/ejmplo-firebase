@@ -1,0 +1,12 @@
+<h2>Listar Personas</h2>
+<span *ngIf="listadoPersonas.length == 0">
+  No existen personas
+</span>
+
+<ul>
+  <li *ngFor="let persona of listadoPersonas">
+      <a (click)="editar(persona)">{{persona.cedula}} | {{persona.nombre}} | {{persona.edad}}&emsp;</a>
+      <button (click)="eliminar(persona)">Eliminar</button>
+      <button (click)="editar(persona)">Editar</button>
+  </li>
+</ul>

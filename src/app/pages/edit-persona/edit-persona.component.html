@@ -1,0 +1,12 @@
+<form (ngSubmit)="actualizarPersona()">
+  <label for="cedula">Cedula:</label><br>
+  <input id="cedula" [(ngModel)]="persona.cedula" name="cedula" required><br>
+
+  <label for="nombre">Nombre:</label><br>
+  <input id="nombre" [(ngModel)]="persona.nombre" name="nombre" required><br>
+
+  <label for="edad">Edad:</label><br>
+  <input id="edad" [(ngModel)]="persona.edad" name="edad" required type="number"><br>
+
+  <input type="submit" value="Actualizar Persona">
+</form>
