@@ -1,5 +1,7 @@
-
-<h1>Editar Persona</h1>
+<mat-toolbar color="secondary"  class="center-title">
+  <h2>Editar Persona</h2>
+</mat-toolbar>
+<br>
 <form (ngSubmit)="actualizarPersona()" class="form-container">
   <mat-form-field appearance="fill" class="form-field">
     <mat-label>Cedula</mat-label>
@@ -13,7 +15,7 @@
 
   <mat-form-field appearance="fill" class="form-field">
     <mat-label>Edad</mat-label>
-    <input matInput id="edad" [(ngModel)]="persona.edad" name="edad" required type="number">
+    <input matInput id="edad" [(ngModel)]="persona.edad" name="edad" required type="number"  min="0" step="0.01">
   </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit" class="submit-button">Actualizar Persona</button>

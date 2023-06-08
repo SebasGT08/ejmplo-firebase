@@ -19,7 +19,9 @@ export class SharedService {
 
   addPerson(person: Persona) {
     let personsCollection = collection(this.fs, 'personas');
-    return addDoc(personsCollection, person);
+    let newDocRef = doc(personsCollection);
+    let newPerson = { ...person, id: newDocRef.id };
+    return setDoc(newDocRef, newPerson);
   }
 
   deletePerson(id: string) {

@@ -21,6 +21,10 @@ import { MatButtonModule } from '@angular/material/button';
 // Importar los módulos de Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { ListProductoComponent } from './pages/list-producto/list-producto.component';
+import { EditProductoComponent } from './pages/edit-producto/edit-producto.component';
+import { CreateProductoComponent } from './pages/create-producto/create-producto.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -42,6 +46,10 @@ const firebaseConfig = {
     EditPersonaComponent,
 
     MenuComponent,
+     ListProductoComponent,
+     EditProductoComponent,
+     CreateProductoComponent,
+
 
   ],
   imports: [
@@ -53,7 +61,8 @@ const firebaseConfig = {
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

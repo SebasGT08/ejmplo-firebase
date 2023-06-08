@@ -1,0 +1,43 @@
+<mat-toolbar color="secondary"  class="center-title">
+  <h2>Listado de Productos</h2>
+</mat-toolbar>
+<br>
+
+<div *ngIf="listadoProductos.length == 0">
+  No existen productos
+</div>
+
+<div *ngIf="listadoProductos.length > 0">
+  <table mat-table [dataSource]="listadoProductos">
+
+    <!-- Columna Codigo -->
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Codigo </th>
+      <td mat-cell *matCellDef="let producto"> {{producto.codigo}} </td>
+    </ng-container>
+
+    <!-- Columna Descripcion -->
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+      <td mat-cell *matCellDef="let producto"> {{producto.descripcion}} </td>
+    </ng-container>
+
+    <!-- Columna Precio -->
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let producto"> {{producto.precio}} </td>
+    </ng-container>
+
+    <!-- Columna Acciones -->
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let producto">
+        <button mat-button color="warn" (click)="eliminar(producto)">Eliminar</button>
+        <button mat-button color="primary" (click)="editar(producto)">Editar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

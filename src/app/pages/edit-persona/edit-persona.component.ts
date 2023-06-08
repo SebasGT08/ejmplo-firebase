@@ -3,6 +3,7 @@ import { Persona } from './../../domain/persona.model';
 import { SharedService } from 'src/app/services/shared.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -17,6 +18,7 @@ export class EditPersonaComponent implements OnInit {
 
 
   constructor(
+    private _snackBar: MatSnackBar,
     private sharedService: SharedService,
     private dataSharingService: DataSharingService,
     private router: Router
@@ -31,12 +33,25 @@ export class EditPersonaComponent implements OnInit {
   }
 
   actualizarPersona() {
-    this.sharedService.updatePerson(this.persona)
+
+      this.sharedService.updatePerson(this.persona)
       .then(() => {
+
+        this._snackBar.open('Persona actualizada con éxito', 'Cerrar', {
+          duration: 2000,
+        });
         this.router.navigate(['list-persona']);
       })
       .catch(error => {
         console.error("Error al actualizar la persona: ", error);
+        this._snackBar.open(`Error al actualizar persona: ${error}`, 'Cerrar', {
+          duration: 2000,
+        });
       });
+
+
+
+
+
   }
 }

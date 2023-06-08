@@ -1,0 +1,22 @@
+<mat-toolbar color="secondary"  class="center-title">
+  <h2>Crear Productos</h2>
+</mat-toolbar>
+<br>
+<form (ngSubmit)="agregarProducto()" class="form-container">
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Codigo</mat-label>
+    <input matInput id="codigo" [(ngModel)]="producto.codigo" name="codigo" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Descripcion</mat-label>
+    <input matInput id="descripcion" [(ngModel)]="producto.descripcion" name="descripcion" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Precio</mat-label>
+    <input matInput id="precio" [(ngModel)]="producto.precio" name="precio" required type="number">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" class="submit-button">Agregar Producto</button>
+</form>
