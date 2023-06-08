@@ -13,6 +13,12 @@ import { ListPersonaComponent } from './pages/list-persona/list-persona.componen
 import { EditPersonaComponent } from './pages/edit-persona/edit-persona.component';
 import { CabezeraComponent } from './cabezera/cabezera.component';
 import { MenuComponent } from './menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 const firebaseConfig = {
@@ -36,10 +42,12 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    MatTableModule,MatInputModule,MatButtonModule,
     AppRoutingModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

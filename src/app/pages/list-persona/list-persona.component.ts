@@ -14,6 +14,8 @@ import { Persona } from './../../domain/persona.model';
 })
 export class ListPersonaComponent {
   listadoPersonas: Persona[] = [];
+  displayedColumns: string[] = ['cedula', 'nombre', 'edad', 'acciones'];
+
 
   constructor(private sharedService: SharedService,private router: Router, private dataSharingService: DataSharingService) { }
 

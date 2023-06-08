@@ -1,12 +1,19 @@
-<form (ngSubmit)="agregarPersona()">
-  <label for="cedula">Cedula:</label><br>
-  <input id="cedula" [(ngModel)]="persona.cedula" name="cedula" required><br>
+<h2>Crear Personas</h2>
+<form (ngSubmit)="agregarPersona()" class="form-container">
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Cedula</mat-label>
+    <input matInput id="cedula" [(ngModel)]="persona.cedula" name="cedula" required>
+  </mat-form-field>
 
-  <label for="nombre">Nombre:</label><br>
-  <input id="nombre" [(ngModel)]="persona.nombre" name="nombre" required><br>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Nombre</mat-label>
+    <input matInput id="nombre" [(ngModel)]="persona.nombre" name="nombre" required>
+  </mat-form-field>
 
-  <label for="edad">Edad:</label><br>
-  <input id="edad" [(ngModel)]="persona.edad" name="edad" required type="number"><br>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Edad</mat-label>
+    <input matInput id="edad" [(ngModel)]="persona.edad" name="edad" required type="number">
+  </mat-form-field>
 
-  <input type="submit" value="Agregar Persona">
+  <button mat-raised-button color="primary" type="submit" class="submit-button">Agregar Persona</button>
 </form>
