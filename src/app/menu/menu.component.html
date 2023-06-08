@@ -1,6 +1,12 @@
-<nav>
-  <ul>
-    <li><a routerLink="/list-persona">Listar Carreras</a></li>
-    <li><a routerLink="/form-persona">Crear Carrera</a></li>
-  </ul>
-</nav>
+<mat-toolbar color="primary">
+  <button mat-button [matMenuTriggerFor]="menu">Personas</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/list-persona">Listar Personas</button>
+    <button mat-menu-item routerLink="/form-persona">Crear Personas</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menu2">Productos</button>
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item routerLink="/list-producto">Listar Productos</button>
+    <button mat-menu-item routerLink="/form-producto">Crear Productos</button>
+  </mat-menu>
+</mat-toolbar>

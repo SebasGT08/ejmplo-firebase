@@ -11,13 +11,16 @@ import { SharedService } from './services/shared.service';
 import { FormPersonaComponent } from './pages/form-persona/form-persona.component';
 import { ListPersonaComponent } from './pages/list-persona/list-persona.component';
 import { EditPersonaComponent } from './pages/edit-persona/edit-persona.component';
-import { CabezeraComponent } from './cabezera/cabezera.component';
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+
+// Importar los módulos de Angular Material
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 
@@ -37,8 +40,9 @@ const firebaseConfig = {
     FormPersonaComponent,
     ListPersonaComponent,
     EditPersonaComponent,
-    CabezeraComponent,
-    MenuComponent
+
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ const firebaseConfig = {
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatMenuModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
