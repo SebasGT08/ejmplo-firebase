@@ -26,7 +26,7 @@ import { EditProductoComponent } from './pages/edit-producto/edit-producto.compo
 import { CreateProductoComponent } from './pages/create-producto/create-producto.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAqwNkP2JJ-HLTruI2LWVXtUOo7_xJ_rPs",
@@ -57,6 +57,7 @@ const firebaseConfig = {
     MatTableModule,MatInputModule,MatButtonModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,

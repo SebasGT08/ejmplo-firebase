@@ -4,6 +4,11 @@
 <br>
 <form (ngSubmit)="agregarPersona()" class="form-container">
   <mat-form-field appearance="fill" class="form-field">
+    <mat-label>ID</mat-label>
+    <input matInput id="id" [(ngModel)]="persona.id" name="id" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
     <mat-label>Cedula</mat-label>
     <input matInput id="cedula" [(ngModel)]="persona.cedula" name="cedula" required>
   </mat-form-field>

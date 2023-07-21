@@ -2,12 +2,12 @@
   <h2>Listado de Personas</h2>
 </mat-toolbar>
 <br>
-<div *ngIf="listadoPersonas.length == 0">
+<div *ngIf="listadoPersonasWS.length == 0">
   No existen personas
 </div>
 
-<div *ngIf="listadoPersonas.length > 0">
-  <table mat-table [dataSource]="listadoPersonas">
+<div *ngIf="listadoPersonasWS.length > 0">
+  <table mat-table [dataSource]="listadoPersonasWS">
 
     <!-- Columna Cedula -->
     <ng-container matColumnDef="cedula">
